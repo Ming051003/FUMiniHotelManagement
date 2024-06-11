@@ -1,0 +1,41 @@
+﻿<Window x:Class="WPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d"
+        Title="Mini Hotel Management" Height="662" Width="678">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#8A2BE2" Offset="0.0"/>
+            <GradientStop Color="LightSkyBlue" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="334*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="184*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <TabControl Margin="9,42,1,4" Grid.Column="1">
+                <TabItem Header="Profile" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="123">
+                <local:ProfileManagement x:Name="profileManagement"/>
+            </TabItem>
+                <TabItem Header="Booking Information History" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="123">
+                    <local:BookingHistory x:Name="bookingHistory"/>
+            </TabItem>
+        </TabControl>
+        <Button Click="btnLogout_Click" Grid.ColumnSpan="2" Margin="510,10,88,579">
+            <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Logout"/>
+                </StackPanel>
+        </Button>
+    </Grid>
+    </StackPanel>
+</Window>

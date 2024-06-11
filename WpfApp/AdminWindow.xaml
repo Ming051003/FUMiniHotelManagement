@@ -1,0 +1,35 @@
+﻿<Window x:Class="WPFApp.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d"
+        Title="Admin Window" Height="636" Width="669">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#8A2BE2" Offset="0.0"/>
+            <GradientStop Color="LightSkyBlue" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <StackPanel>
+        <Grid>
+            <TabControl>
+                <TabItem Header="Customer Management" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="123">
+                    <local:CustomerManagement />
+                </TabItem>
+                <TabItem Header="Room Management" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="123">
+                    <local:RoomManagement />
+                </TabItem>
+                <TabItem Header="Report Statistics">
+                    <local:ReportStatistics x:Name="reportStatistics"/>
+                </TabItem>
+            </TabControl>
+            <Button Click="btnLogout_Click" Margin="526,1,72,588">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Logout"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </StackPanel>
+</Window>

@@ -1,0 +1,130 @@
+﻿<Window x:Class="WPFApp.AddEditBookingDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d"
+        Title="AddEditBookingDialog" Height="648" Width="962"
+        ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#E0E0E0" Offset="0.0"/>
+            <GradientStop Color="#FFFFFF" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="5,2"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#3F51B5"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#3F51B5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#303F9F"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#1A237E"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="Room Booking Management" FontSize="24" FontWeight="Bold" Foreground="#3F51B5" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+        <!-- Available Rooms -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,20,0">
+            <TextBlock Text="Available Rooms" FontSize="18" FontWeight="Bold" Foreground="#3F51B5" Margin="0,0,0,10"/>
+            <DataGrid x:Name="dgAvailableRooms" Margin="0,0,0,10" AutoGenerateColumns="False" SelectionChanged="dgAvailableRooms_SelectionChanged" Height="400">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Room ID" Binding="{Binding RoomId}" Width="*" />
+                    <DataGridTextColumn Header="Room Number" Binding="{Binding RoomNumber}" Width="*" />
+                    <DataGridTextColumn Header="Description" Binding="{Binding RoomDetailDescription}" Width="*" />
+                    <DataGridTextColumn Header="Type" Binding="{Binding RoomType}" Width="*" />
+                    <DataGridTextColumn Header="Max Capacity" Binding="{Binding RoomMaxCapacity}" Width="*" />
+                    <DataGridTextColumn Header="Status" Binding="{Binding RoomStatus}" Width="*" />
+                    <DataGridTextColumn Header="Price Per Day" Binding="{Binding RoomPricePerDay, StringFormat=C}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <!-- Booking Details -->
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="20,0,0,0">
+            <TextBlock Text="Booking Details" FontSize="18" FontWeight="Bold" Foreground="#3F51B5" Margin="0,0,0,10"/>
+            <DataGrid x:Name="dgBookingDetails" Margin="0,0,0,10" AutoGenerateColumns="False" SelectionChanged="dgBookingDetails_SelectionChanged" Height="143">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Room ID" Binding="{Binding Room.RoomId}" Width="*" />
+                    <DataGridTextColumn Header="Room Number" Binding="{Binding Room.RoomNumber}" Width="*" />
+                    <DataGridTextColumn Header="Start Date" Binding="{Binding StartDate, StringFormat=d}" Width="*" />
+                    <DataGridTextColumn Header="End Date" Binding="{Binding EndDate, StringFormat=d}" Width="*" />
+                    <DataGridTextColumn Header="Actual Price" Binding="{Binding ActualPrice, StringFormat=C}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Room ID:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <TextBox x:Name="txtRoomId" Grid.Row="0" Grid.Column="1" Margin="0,5"/>
+
+                <TextBlock Text="Room Number:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <TextBox x:Name="txtRoomNumber" Grid.Row="1" Grid.Column="1" Margin="0,5"/>
+
+                <TextBlock Text="Start Date:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <DatePicker x:Name="dpStartDate" Grid.Row="2" Grid.Column="1" Margin="0,5"/>
+
+                <TextBlock Text="End Date:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <DatePicker x:Name="dpEndDate" Grid.Row="3" Grid.Column="1" Margin="0,5"/>
+
+                <TextBlock Text="Price Per Day:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <TextBox x:Name="txtPrice" Grid.Row="4" Grid.Column="1" Margin="0,5"/>
+
+                <TextBlock Text="Your Total Price" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <TextBox x:Name="txtTotalPrice" Grid.Row="5" Grid.Column="1" Margin="0,5"/>
+
+                <TextBlock Text="Max Capacity:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <TextBox x:Name="txtNumPerson" Grid.Row="6" Grid.Column="1" Margin="0,5"/>
+
+
+
+                
+            </Grid>
+
+            <!-- Room Details -->
+        </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,20,0,0">
+            <Button Content="Add to Booking" Width="150" Height="40" Margin="10" Click="btnAdd_Click"/>
+            <Button Content="Delete" Width="150" Height="40" Margin="10" Click="btnDelete_Click"/>
+            <Button Content="Save" Width="150" Height="40" Margin="10" Click="btnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

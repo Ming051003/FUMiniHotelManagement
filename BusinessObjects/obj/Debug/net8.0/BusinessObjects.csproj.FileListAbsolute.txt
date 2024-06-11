@@ -1,0 +1,14 @@
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\bin\Debug\net8.0\BusinessObjects.deps.json
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\bin\Debug\net8.0\BusinessObjects.runtimeconfig.json
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\bin\Debug\net8.0\BusinessObjects.dll
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\bin\Debug\net8.0\BusinessObjects.pdb
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.AssemblyReference.cache
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfoInputs.cache
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\BusinessObjects.AssemblyInfo.cs
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\BusinessObjects.csproj.CoreCompileInputs.cache
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\BusinessObjects.dll
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\refint\BusinessObjects.dll
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
