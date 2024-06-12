@@ -13,18 +13,18 @@ namespace WPFApp
     /// </summary>
     public partial class RoomManagement : UserControl
     {
-        private readonly IRoomService _service;
+        private readonly IRoomService iRoomService;
         public RoomManagement()
         {
             InitializeComponent();
-            _service = ((App)Application.Current).ServiceProvider.GetRequiredService<IRoomService>() ?? throw new ArgumentNullException(nameof(RoomService));
+            iRoomService = ((App)Application.Current).ServiceProvider.GetRequiredService<IRoomService>() ?? throw new ArgumentNullException(nameof(RoomService));
             LoadData();
         }
 
         private void LoadData()
         {
             dgRooms.ItemsSource = null;
-            var rooms = _service.GetRooms(r => r.RoomNumber.Contains(txtSearch.Text));
+            var rooms = iRoomService.GetRooms(r => r.RoomNumber.Contains(txtSearch.Text));
             dgRooms.ItemsSource = rooms;
         }
 
@@ -34,7 +34,7 @@ namespace WPFApp
             {
                 try
                 {
-                    List<RoomDTO> rooms = _service.GetRooms(r => r.RoomNumber.Contains(txtSearch.Text));
+                    List<RoomDTO> rooms = iRoomService.GetRooms(r => r.RoomNumber.Contains(txtSearch.Text));
                     // Ensure UI update happens on the main thread
                     Dispatcher.Invoke(() =>
                     {
@@ -65,7 +65,7 @@ namespace WPFApp
             if (addEditRoomDialog.ShowDialog() == true)
             {
                 var newRoom = addEditRoomDialog.Room;
-                await _service.AddRoom(newRoom);
+                await iRoomService.AddRoom(newRoom);
                 LoadData();
             }
         }
@@ -78,7 +78,7 @@ namespace WPFApp
                 if (addEditRoomDialog.ShowDialog() == true)
                 {
                     var updatedRoom = addEditRoomDialog.Room;
-                    await _service.UpdateRoom(updatedRoom);
+                    await iRoomService.UpdateRoom(updatedRoom);
                     LoadData();
                 }
             }
@@ -94,8 +94,14 @@ namespace WPFApp
             {
                 if (MessageBox.Show($"Are you sure you want to delete Room {selectedRoom.RoomNumber}?", "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
+                    /*Xóa khỏi db
+                    await _service.DeleteRoom(selectedRoom.RoomId);
+                    LoadData();
+                    */
+
+                    //Xóa chỉ chuyển trạng thái status
                     selectedRoom.RoomStatus = 0;
-                    await _service.UpdateRoom(selectedRoom);
+                    await iRoomService.UpdateRoom(selectedRoom);
                     LoadData();
                 }
             }

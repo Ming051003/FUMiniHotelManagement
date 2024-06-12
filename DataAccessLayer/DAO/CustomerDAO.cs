@@ -53,18 +53,18 @@ public class CustomerDAO
         return success == 1 ? true : false;
     }
 
-    public static async Task UpdateCustomer(CustomerDTO customer)
+    public static async Task UpdateCustomer(CustomerDTO customerDTO)
     {
         using var db = new FuminiHotelManagementContext();
-        var existingCustomer = await db.Customers.FindAsync(customer.CustomerId);
+        var existingCustomer = await db.Customers.FindAsync(customerDTO.CustomerId);
         if (existingCustomer != null)
         {
-            existingCustomer.CustomerFullName = customer.CustomerFullName;
-            existingCustomer.Telephone = customer.Telephone;
-            existingCustomer.EmailAddress = customer.EmailAddress;
-            existingCustomer.CustomerBirthday = customer.CustomerBirthday;
-            existingCustomer.CustomerStatus = customer.CustomerStatus;
-            existingCustomer.Password = customer.Password;
+            existingCustomer.CustomerFullName = customerDTO.CustomerFullName;
+            existingCustomer.Telephone = customerDTO.Telephone;
+            existingCustomer.EmailAddress = customerDTO.EmailAddress;
+            existingCustomer.CustomerBirthday = customerDTO.CustomerBirthday;
+            existingCustomer.CustomerStatus = customerDTO.CustomerStatus;
+            existingCustomer.Password = customerDTO.Password;
 
             db.Customers.Update(existingCustomer);
             await db.SaveChangesAsync();
@@ -82,17 +82,17 @@ public class CustomerDAO
         }
     }
 
-    public static async Task AddCustomer(CustomerDTO customer)
+    public static async Task AddCustomer(CustomerDTO customerDTO)
     {
         using var db = new FuminiHotelManagementContext();
         var newCustomer = new Customer
         {
-            CustomerFullName = customer.CustomerFullName,
-            Telephone = customer.Telephone,
-            EmailAddress = customer.EmailAddress,
-            CustomerBirthday = customer.CustomerBirthday,
-            CustomerStatus = customer.CustomerStatus,
-            Password = customer.Password
+            CustomerFullName = customerDTO.CustomerFullName,
+            Telephone = customerDTO.Telephone,
+            EmailAddress = customerDTO.EmailAddress,
+            CustomerBirthday = customerDTO.CustomerBirthday,
+            CustomerStatus = customerDTO.CustomerStatus,
+            Password = customerDTO.Password
         };
 
         db.Customers.Add(newCustomer);

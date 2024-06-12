@@ -171,3 +171,4 @@ D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\WpfApp\ob
 D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\WpfApp\bin\Debug\net8.0-windows\MaterialDesignColors.dll
 D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\WpfApp\bin\Debug\net8.0-windows\MaterialDesignThemes.Wpf.dll
 D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\WpfApp\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\WpfApp\obj\Debug\net8.0-windows\WPFApp.sourcelink.json

@@ -19,3 +19,4 @@ D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\Services\
 D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\Services\obj\Debug\net8.0\Services.pdb
 D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\Services\obj\Debug\net8.0\Services.genruntimeconfig.cache
 D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\Services\obj\Debug\net8.0\ref\Services.dll
+D:\Study\FPT\Kỳ 5\PRN212\New folder\Lab-Assign\FUMiniHotelManagement\Services\obj\Debug\net8.0\Services.sourcelink.json
